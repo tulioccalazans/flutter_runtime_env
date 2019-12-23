@@ -1,6 +1,6 @@
-# should_enable_analytics_example
+# flutter_runtime_env_example
 
-Demonstrates how to use the should_enable_analytics plugin.
+Demonstrates how to use the flutter_runtime_env plugin.
 
 ## Getting Started
 

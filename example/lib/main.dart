@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 
-import 'package:should_enable_analytics/should_enable_analytics.dart';
+import 'package:flutter_runtime_env/flutter_runtime_env.dart';
 
 void main() => runApp(MyApp());
 

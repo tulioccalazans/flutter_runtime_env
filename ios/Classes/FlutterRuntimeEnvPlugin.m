@@ -1,11 +1,11 @@
-#import "ShouldEnableAnalyticsPlugin.h"
+#import "FlutterRuntimeEnvPlugin.h"
 
-@implementation ShouldEnableAnalyticsPlugin
+@implementation FlutterRuntimeEnvPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
   FlutterMethodChannel* channel = [FlutterMethodChannel
-      methodChannelWithName:@"should_enable_analytics"
+      methodChannelWithName:@"flutter_runtime_env"
             binaryMessenger:[registrar messenger]];
-  ShouldEnableAnalyticsPlugin* instance = [[ShouldEnableAnalyticsPlugin alloc] init];
+  FlutterRuntimeEnvPlugin* instance = [[FlutterRuntimeEnvPlugin alloc] init];
   [registrar addMethodCallDelegate:instance channel:channel];
 }
 

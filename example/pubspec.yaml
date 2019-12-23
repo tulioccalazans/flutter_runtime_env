@@ -1,5 +1,5 @@
-name: should_enable_analytics_example
-description: Demonstrates how to use the should_enable_analytics plugin.
+name: flutter_runtime_env_example
+description: Demonstrates how to use the flutter_runtime_env plugin.
 publish_to: 'none'
 
 environment:
@@ -10,7 +10,7 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^0.1.2
-  should_enable_analytics:
+  flutter_runtime_env:
     path: ../
 
 dev_dependencies:

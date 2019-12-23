@@ -1,4 +1,4 @@
-package io.gitjournal.should_enable_analytics_example;
+package io.gitjournal.flutter_runtime_env_example;
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity;

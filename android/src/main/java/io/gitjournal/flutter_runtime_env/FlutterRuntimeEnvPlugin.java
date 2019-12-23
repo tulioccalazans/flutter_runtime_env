@@ -1,4 +1,4 @@
-package io.gitjournal.should_enable_analytics;
+package io.gitjournal.flutter_runtime_env;
 
 import android.content.Context;
 import android.provider.Settings;
@@ -11,9 +11,9 @@ import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.plugin.common.PluginRegistry.Registrar;
 
-/** ShouldEnableAnalyticsPlugin */
-public class ShouldEnableAnalyticsPlugin implements FlutterPlugin, MethodCallHandler {
-    final static String CHANNEL_NAME = "io.gitjournal/should_enable_analytics";
+/** FlutterRuntimeEnvPlugin */
+public class FlutterRuntimeEnvPlugin implements FlutterPlugin, MethodCallHandler {
+    final static String CHANNEL_NAME = "io.gitjournal/flutter_runtime_env";
     private Context context;
     private MethodChannel channel;
 
@@ -25,7 +25,7 @@ public class ShouldEnableAnalyticsPlugin implements FlutterPlugin, MethodCallHan
     }
 
     public static void registerWith(Registrar registrar) {
-        ShouldEnableAnalyticsPlugin instance = new ShouldEnableAnalyticsPlugin();
+        FlutterRuntimeEnvPlugin instance = new FlutterRuntimeEnvPlugin();
         instance.channel = new MethodChannel(registrar.messenger(), CHANNEL_NAME);
         instance.context = registrar.context();
         instance.channel.setMethodCallHandler(instance);
@@ -36,16 +36,13 @@ public class ShouldEnableAnalyticsPlugin implements FlutterPlugin, MethodCallHan
         if (call.method.equals("shouldEnableAnalytics")) {
             String testLabSetting = Settings.System.getString(context.getContentResolver(), "firebase.test.lab");
             if ("true".equals(testLabSetting)) {
-                return result.success(false);
+                result.success(false);
+                return;
             }
 
             if (BuildConfig.DEBUG) {
-                return result.success(false);
-            }
-
-            // Emulators
-            if (Build.FINGERPRINT.contains("generic")) {
-                return result.success(false);
+                result.success(false);
+                return;
             }
 
             result.success(true);

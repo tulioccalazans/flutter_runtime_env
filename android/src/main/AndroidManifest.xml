@@ -1,2 +1,2 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="io.gitjournal.should_enable_analytics">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="io.gitjournal.flutter_runtime_env">
 </manifest>

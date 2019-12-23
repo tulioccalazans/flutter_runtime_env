@@ -1,4 +1,4 @@
-group 'io.gitjournal.should_enable_analytics'
+group 'io.gitjournal.flutter_runtime_env'
 version '1.0'
 
 buildscript {

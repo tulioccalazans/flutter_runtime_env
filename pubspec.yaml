@@ -1,4 +1,4 @@
-name: should_enable_analytics
+name: flutter_runtime_env
 description: Checks if Analytics should be enabled by looking at
   various different parameters
 version: 0.0.1
@@ -17,5 +17,5 @@ dev_dependencies:
 
 flutter:
   plugin:
-    androidPackage: io.gitjournal.should_enable_analytics
-    pluginClass: ShouldEnableAnalyticsPlugin
+    androidPackage: io.gitjournal.flutter_runtime_env
+    pluginClass: FlutterRuntimeEnvPlugin
