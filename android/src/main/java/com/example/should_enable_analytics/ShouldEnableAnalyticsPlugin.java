@@ -1,4 +1,4 @@
-package com.example.should_enable_analytics;
+package io.gitjournal.should_enable_analytics;
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
