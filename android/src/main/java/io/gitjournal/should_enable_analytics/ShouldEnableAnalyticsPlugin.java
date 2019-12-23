@@ -34,17 +34,21 @@ public class ShouldEnableAnalyticsPlugin implements FlutterPlugin, MethodCallHan
     @Override
     public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
         if (call.method.equals("shouldEnableAnalytics")) {
-            boolean shouldBe = true;
             String testLabSetting = Settings.System.getString(context.getContentResolver(), "firebase.test.lab");
             if ("true".equals(testLabSetting)) {
-                shouldBe = false;
+                return result.success(false);
             }
 
             if (BuildConfig.DEBUG) {
-                shouldBe = false;
+                return result.success(false);
             }
 
-            result.success(shouldBe);
+            // Emulators
+            if (Build.FINGERPRINT.contains("generic")) {
+                return result.success(false);
+            }
+
+            result.success(true);
             return;
         } else {
             result.notImplemented();

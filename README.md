@@ -1,14 +1,10 @@
-# should_enable_analytics
+# Should Enable Analytics
 
-A new flutter plugin project.
+This project gives one function which checks if Analytcs should be Enabled.
 
-## Getting Started
+Analytics are disabled when -
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+* Running a Debug build
+* Running in an emulator
+* Running in FireBase Test Labs
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
