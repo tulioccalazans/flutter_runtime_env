@@ -1,6 +1,6 @@
 name: flutter_runtime_env
-description: Checks if Analytics should be enabled by looking at
-  various different parameters
+description: Gives you some information about the runtime env.
+  Such as if it is running in the Firebase TestLab
 version: 0.0.1
 homepage: https://gitjournal.io
 
