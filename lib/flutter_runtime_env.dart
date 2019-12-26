@@ -4,11 +4,13 @@ import 'package:flutter/foundation.dart' as Foundation;
 
 const _channel = const MethodChannel('io.gitjournal/flutter_runtime_env');
 
-Future<bool> shouldEnableAnalytics() async {
-  if (isInDebugMode()) {
+Future<bool> inFirebaseTestLab() async {
+  try {
+    var result = await _channel.invokeMethod('inFirebaseTestLab');
+    return result;
+  } catch (err) {
     return false;
   }
-  return await _channel.invokeMethod('shouldEnableAnalytics');
 }
 
 bool isInDebugMode() {

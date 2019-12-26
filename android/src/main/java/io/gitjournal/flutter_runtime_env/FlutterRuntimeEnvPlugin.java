@@ -33,19 +33,14 @@ public class FlutterRuntimeEnvPlugin implements FlutterPlugin, MethodCallHandler
 
     @Override
     public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
-        if (call.method.equals("shouldEnableAnalytics")) {
+        if (call.method.equals("inFirebaseTestLab")) {
             String testLabSetting = Settings.System.getString(context.getContentResolver(), "firebase.test.lab");
             if ("true".equals(testLabSetting)) {
-                result.success(false);
+                result.success(true);
                 return;
             }
 
-            if (BuildConfig.DEBUG) {
-                result.success(false);
-                return;
-            }
-
-            result.success(true);
+            result.success(false);
             return;
         } else {
             result.notImplemented();
