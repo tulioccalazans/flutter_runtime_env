@@ -1,7 +1,7 @@
 name: flutter_runtime_env
 description: Gives you some information about the runtime env.
   Such as if it is running in the Firebase TestLab
-version: 0.0.2
+version: 0.0.3
 homepage: https://gitjournal.io
 
 environment:
