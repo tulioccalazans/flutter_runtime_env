@@ -10,7 +10,7 @@ Future<bool> inFirebaseTestLab() async {
     return false;
   }
   try {
-    var result = await _channel.invokeMethod('inFirebaseTestLab');
+    var result = (await _channel.invokeMethod<bool>('inFirebaseTestLab'))!;
     return result;
   } catch (err) {
     return false;

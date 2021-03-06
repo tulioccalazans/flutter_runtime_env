@@ -11,7 +11,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  bool _shouldBeEnabled = false;
+  bool _isInFirebaseTestLab = false;
 
   @override
   void initState() {
@@ -21,9 +21,9 @@ class _MyAppState extends State<MyApp> {
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
-    var result = await shouldEnableAnalytics();
+    var result = await inFirebaseTestLab();
     setState(() {
-      _shouldBeEnabled = result;
+      _isInFirebaseTestLab = result;
     });
   }
 
@@ -32,10 +32,10 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Should Enable Analytics'),
+          title: const Text('is in FirebaseTest Lab'),
         ),
         body: Center(
-          child: Text('Should Analytics be Enabled: $_shouldBeEnabled\n'),
+          child: Text('is in FirebaseTest Lab: $_isInFirebaseTestLab\n'),
         ),
       ),
     );
